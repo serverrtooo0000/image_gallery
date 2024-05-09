@@ -25,12 +25,14 @@ class ImageController extends Controller
 
        
         $imageName = $image->getClientOriginalName();
-        $imagePath = $image->store('images','public');
+        $path = $image->store('images');
+        $relativePath = basename($path);
+
 
        
         $imageModel = new Image();
         $imageModel->name = $imageName;
-        $imageModel->path = $imagePath;
+        $imageModel->path = $relativePath;
         $imageModel->save();
      } 
            
