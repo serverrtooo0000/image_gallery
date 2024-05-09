@@ -23,8 +23,8 @@ class ImageUploadRequest extends FormRequest
     {
         return [
             
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048' //Проверка формата изоброжений
-            'image' => 'required|array|min:1|max:5' //кол-во
+            'image' => ['required|image|mimes:jpeg,png,jpg,gif|max:2048'], //Проверка формата изоброжений
+            'image' => ['required|array|min:1|max:5'], //кол-во
         ];
         
     }
